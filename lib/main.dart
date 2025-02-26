@@ -1,41 +1,40 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        // useMaterial3: false,
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Fila de Iconos"),
+          titleTextStyle: TextStyle(color: Colors.black87, fontSize: 24),
+          centerTitle: true,
+          backgroundColor: Colors.amber,
+        ),
+        body: Column(
+          children: <Widget>[
+            SizedBox(height: 20), // Espacio entre AppBar y texto
+            Text(
+              "Eliziel Camperos Garcia",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 50), // Espacio entre texto y fila de iconos
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Icon(Icons.home, size: 50, color: Colors.blue),
+                Icon(Icons.star, size: 50, color: Colors.orange),
+                Icon(Icons.favorite, size: 50, color: Colors.red),
+                Icon(Icons.person, size: 50, color: Colors.green),
+                Icon(Icons.add, size: 50, color: Colors.purple),
+              ],
+            ),
+          ],
         ),
       ),
     );
